@@ -5,6 +5,7 @@ html { box-sizing: border-box; }
 body {
 	margin: 0;
 	font-family: 'Source Sans Pro', sans-serif;
+	color: whitesmoke;
 }
 
 .paticka {
@@ -25,7 +26,10 @@ Mobil:		0 - 479px
 Tablet:		480px - 859px
 Počítač:	860px a víc
 
-Chrome a některé další prohlížeče nejdou zmenšit pod určitou šířku, takže je možné, že ti nepůjde zmenšit tolik, aby se aktivovala mobilní verze. Pokud se ti to stane, změň si v kódu hranici mezi mobilem a tabletem třeba na 600px, nebo aktivuj v prohlížeči vývojářské nástroje s mobilním náhledem, kde může nastavovat jakoukoliv velikost (i malou).
+Chrome a některé další prohlížeče nejdou zmenšit pod určitou šířku, takže je možné, 
+že ti nepůjde zmenšit tolik, aby se aktivovala mobilní verze. 
+Pokud se ti to stane, změň si v kódu hranici mezi mobilem a tabletem třeba na 600px, nebo aktivuj v prohlížeči vývojářské nástroje 
+s mobilním náhledem, kde může nastavovat jakoukoliv velikost (i malou).
 
 Obrázky pro jednotlivé recepty jsou ve složce images.
 Nastav je receptům jako obrázky na pozadí (tj. nepřidávej je jako <img> do HTML)
@@ -33,3 +37,164 @@ Nastav je receptům jako obrázky na pozadí (tj. nepřidávej je jako <img> do 
 Na rozložení prvků NEPOUŽÍVEJ absolutní pozicování, ale pouze flexboxy.
 Flexboxy mohou být vnořené do sebe, klidně několikrát.
 */
+
+p {
+	font-size: 14px;
+	margin: 0;
+}
+
+.malyrecept1, 
+.malyrecept2, 
+.malyrecept3, 
+.malyrecept4 {
+	padding: 10px;
+	min-height: 90px;
+}
+
+.hlavnirecept {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	min-height: 200px;
+	padding: 10px;
+	background-image:
+		linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+		url('images/salat.jpg');
+}
+
+.hlavnirecept:hover {
+	background-image: url(images/salat.jpg);
+}
+
+.hlavnirecept h1 {
+	font-size: 28px;
+	margin: 0;
+}
+
+.recept {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border: 1px solid white;
+}
+
+.receptnazev {
+	font-size: 18px;
+	margin: 0;
+}
+
+.receptmenu {
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.malyrecept1 {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image:
+		linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+		url('images/chlebicek.jpg');
+}
+
+.malyrecept1:hover {
+	background-image: url(images/chlebicek.jpg);
+}
+
+.malyrecept2 {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image:
+		linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+		url('images/tacos.jpg');
+}
+.malyrecept2:hover {
+	background-image: url(images/tacos.jpg);
+}
+
+.malyrecept3 {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image:
+		linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+		url('images/cizrna.jpg');
+}
+
+.malyrecept3:hover {
+	background-image: url(images/cizrna.jpg);
+}
+
+.malyrecept4 {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image:
+		linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+		url('images/burger.jpg');
+}
+
+.malyrecept4:hover {
+	background-image: url(images/burger.jpg);
+}
+@media screen and (min-width: 480px) {
+	.hlavnirecept h1 {
+		font-size: 36px;
+	}
+
+	.receptnazev {
+		font-size: 22px;
+	}
+
+	.malyrecept1, 
+	.malyrecept2, 
+	.malyrecept3, 
+	.malyrecept4 {
+	padding: 20px;
+	min-height: 150px;
+	flex: 0 0 50%;
+	}
+
+	.hlavnirecept {
+	min-height: 250px;
+	padding: 20px;
+	}
+
+	.malerecepty {
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
+
+@media screen and (min-width: 860px) {
+	.hlavnirecept h1 {
+		font-size: 48px;
+	}
+
+	.receptnazev {
+		font-size: 28px;
+	}
+
+	.malyrecept1, 
+	.malyrecept2, 
+	.malyrecept3, 
+	.malyrecept4 {
+	min-height: 200px;
+	
+	}
+
+	.malerecepty {
+		flex: 1 0 66.66666%;
+	}
+
+	.hlavnirecept {
+	min-height: 400px;
+	flex: 1 0 33.33333%;
+	}
+
+	.kontejner {
+		display: flex;
+	}
+}
